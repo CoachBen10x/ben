@@ -30,9 +30,14 @@ The person is a fitness coach on the WeDoTransformations (WDT) team in Malaysia 
 
 ## Instagram content analysis
 1. Get the numbers first, don't ask for them:
-   - If the Metricool tools are available (`getBrandSettings`, then `getAnalyticsAvailableMetrics` and
-     `getAnalyticsDataByMetrics` for Instagram), pull the last 30 days of posts/reels: reach, views,
-     saves, shares, comments, follows, and watch time / retention if available. `getBestTimeToPostByNetwork` for timing.
+   - If the Metricool tools are available: brand "coachben10x" (`getBrandSettings` gives the id; it was 7666938,
+     timezone Asia/Singapore). Call `getAnalyticsDataByMetrics` for the last 30 days with Instagram reels fields:
+     IGRE01 date, IGRE03 caption, IGRE11 reach, IGRE23 views, IGRE12 saves, IGRE21 shares, IGRE07 comments,
+     IGRE24 avg watch time (s), IGRE30 skip rate (% who swipe away in the first 3 s), IGRE28 3-second view rate.
+     IGRE27 retention often comes back empty. Never use IGRE13/IGRE15 (deprecated). For carousels/photos use the
+     `posts` connector (check field ids with `getAnalyticsAvailableMetrics`). The same brand also has
+     Threads (coachben10x) and TikTok (coach.ben10). `getBestTimeToPostByNetwork` for timing.
+     Skip rate is the best hook score: lower = stronger first 2 seconds.
    - If not, ask once for screenshots of Instagram Insights or a Metricool export, then read them.
 2. Show a short scoreboard: top 3 and bottom 3 posts with 1 line on why (hook, topic, format, length, posting time).
    Judge by saves + shares + follows per reach, not likes. Name the pattern, not just the numbers.
