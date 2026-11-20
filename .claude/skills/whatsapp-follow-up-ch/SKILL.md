@@ -1,104 +1,118 @@
 ---
 name: "whatsapp-follow-up-ch"
-description: "Follow up existing WhatsApp Business customers as CH (reconnect, group support invite, ✅ check, challenge question) safely and personally. Use for \"run follow up customer lama\" or \"whatsapp follow up CH\"."
+description: "Reactivate Coach Ben's past product clients on WhatsApp Business (reconnect, restock check, group coaching / call invite, challenge question) safely and personally, in English, by first name. Use for \"run follow up customer lama\", \"whatsapp follow up\", \"reactivate old clients\" or \"follow up past clients\"."
 ---
 
-# WhatsApp Follow-Up — CH (WDT / TPFM)
+# WhatsApp Follow-Up — Coach Ben (Client Reactivation)
 
-Skill ni hantar follow-up kepada pelanggan lama melalui **WhatsApp Web (WhatsApp Business)** guna **Claude in Chrome**. Claude baca chat, pilih mesej ikut peringkat, tunjuk draf, dan hantar hanya selepas pengguna setuju.
+This skill follows up **past clients who have bought products before** through **WhatsApp Web (WhatsApp Business)** using **Claude in Chrome**. The goal is to reactivate them: restart their routine, restock products, and where it fits, bring them into group coaching or a call.
 
-Untuk pelanggan sedia ada yang bersetuju dihubungi sahaja. Tiada skrip yang boleh bypass sekatan WhatsApp, jadi kekal natural, personal, tak spam.
+Claude reads each chat, picks the right message for the stage, shows the draft, and sends only after the user approves.
 
-**Nama coach:** "CH" dalam skrip ialah nama coach. Jika pengguna bukan CH, tanya nama mereka sekali dan gantikan setiap "CH" dengan nama itu dalam draf.
+Only for existing clients who agreed to be contacted. Nothing here gets around WhatsApp's limits, so keep it natural, personal and never spammy.
 
-## Peraturan keselamatan
-- Mesej hanya pelanggan yang setuju dihubungi. Jangan blast.
-- Satu mesej pada satu masa. Mesej seterusnya hanya selepas pelanggan reply.
-- Belum reply: tunggu 2–3 hari, hantar SATU follow-up ringkas.
-- Masih senyap: berhenti sehingga pelanggan hubungi semula.
-- Jika pelanggan tak mahu terima mesej: berhenti terus, hormati.
-- Jangan hantar kesemua skrip kepada orang yang sama. Pilih ikut situasi.
-- Sebelum hantar, tunjuk setiap draf kepada pengguna dan tunggu kelulusan. Jangan hantar apa-apa tanpa kelulusan.
+## Voice (Coach Ben)
+- **English**, conversational, warm and direct. Short lines. Sounds like a coach texting, not a brand broadcasting.
+- Sign as **Coach Ben** only when introducing himself (Message 1 / scripts that reopen a chat). Otherwise just talk.
+- Address the client by **first name**. Take it from the WhatsApp contact name or the chat; use only the first name. If it's unclear (e.g. a business name, nickname, or "~" unsaved number), ask the user before drafting. Never write "[First name]" in a sent message.
+- **Few to no emojis.** At most one per message, often none. No emoji strings.
+- No pressure, no hard selling. Ask a question, make it easy to reply.
+- If the user later shares real messages they've sent, match their wording and rhythm and update these scripts.
 
-## Flow utama
-Hari 1 → Mesej 1. Reply → Mesej 2. Tiada reply 2–3 hari → Mesej 3. Reply ✅ → Mesej 4, kemudian sambung secara personal.
+## Safety rules
+- Only message clients who agreed to be contacted. Never blast.
+- One message at a time. The next message only after the client replies.
+- No reply: wait 2–3 days, send ONE short follow-up.
+- Still silent: stop until the client reaches out.
+- If the client doesn't want messages: stop immediately and respect it.
+- Don't send every script to the same person. Pick by situation.
+- Before sending, show each draft to the user and wait for approval. Never send anything without approval.
 
-### Mesej 1 — Reconnect
-Salam, hai cik 🥰 Apa khabar?
+## Main flow
+Day 1 → Message 1. Reply → Message 2. No reply after 2–3 days → Message 3. Reply YES → Message 4, then hand over for a personal conversation.
 
-CH ni. Macam mana journey weight loss cik sekarang? Okay ke setakat ni?
+### Message 1 — Reconnect
+Hi [First name], Coach Ben here.
 
-Kalau ada apa-apa cabaran, let me know tau. CH boleh bantu ❤️
-reply je NAK CH
+It's been a while since we last caught up. How have you been, and how's your fat loss going lately?
 
-### Mesej 2 — Ajak group support (selepas reply)
-I see 🥰
+Just checking in. If anything's been getting in the way, let me know and I'll help where I can.
 
-Cik nak tak join group support CH? Kita boleh sama-sama dapatkan semangat, sharing tips dan stay motivated dalam journey ni.
+### Message 2 — After they reply (pick the version that fits their reply)
+**2A — They're still on track or want to keep going:**
+Good to hear, [First name].
 
-Group ni FREE je ❤️
+How are you doing on your products right now? If you're running low, I can sort out a restock for you so you don't lose momentum.
 
-### Mesej 3 — Follow-up ✅ (jika senyap 2–3 hari)
-CH nak check sikit 🥰
+**2B — They've fallen off / struggling:**
+Totally normal, [First name]. Busy schedules do that to everyone.
 
-Kalau cik masih nak CH bantu dalam journey weight loss, reply ✅ je tau.
+We've got a group coaching running right now that helps people get their routine back without overhauling their whole life. Want me to send you the details?
 
-Nanti CH follow up personally ❤️
+**2C — They have specific questions or a bigger goal:**
+Makes sense, [First name]. That's worth a proper conversation.
 
-### Mesej 4 — Bila reply ✅
-Yeay, thank you cik! 🥰
+Would you be open to a quick call this week? I can look at where you are now and map out the next steps with you.
 
-CH nak tahu sikit, sekarang cabaran paling besar cik yang mana satu?
+### Message 3 — Nudge (if silent for 2–3 days, once only)
+Hi [First name], just a quick one.
 
-1️⃣ Susah nak control makan
-2️⃣ Berat stuck
-3️⃣ Craving selalu
-4️⃣ Susah nak konsisten
+If you'd still like my help getting back on track, reply YES and I'll follow up with you personally.
 
-Reply nombor je pun okay ❤️
+### Message 4 — When they reply YES
+Great, thanks [First name].
 
-## 10 skrip customer lama (tanpa "cik") — pilih SATU ikut situasi
-1. Friendly Reconnect: Salam hai 🥰 Apa khabar? CH ni. Lama tak check in. Macam mana journey weight loss sekarang? Semua okay ke? ❤️
-2. Check Cabaran: Hai ❤️ CH nak check sikit, sekarang ada apa-apa cabaran tak nak maintain berat atau jaga pemakanan? Share je tau, mana yang CH boleh bantu 🥰
-3. Check Konsistensi: Hai 🥰 Macam mana rutin makan dan aktiviti sekarang? Masih on track ke atau dah lama berehat? No pressure tau, CH just nak check ❤️
-4. Jemput Group Support: I see 🥰 CH ada group support untuk bantu kita stay motivated dan konsisten. Nak join tak? FREE je ❤️
-5. Follow-Up ✅: Hai ❤️ Kalau masih nak CH bantu dalam journey weight loss, reply ✅ je tau. CH boleh follow up ikut apa yang diperlukan 🥰
-6. Check Progress: Hai 🥰 CH curious nak tahu, sejak kali terakhir kita coaching, ada perubahan tak pada berat, ukuran badan atau energy? Share dengan CH tau ❤️
-7. Pelanggan Lama Senyap: Salam ❤️ Lama kita tak catch up kan. Hope sihat dan semuanya okay. Kalau perlukan support untuk restart rutin sihat, CH masih ada tau 🥰
-8. Jemput Restart: Hai 🥰 Kalau rasa nak restart balik healthy routine, CH ada group coaching yang boleh bantu susun semula rutin makan dan aktiviti. Nak CH share details? ❤️
-9. Check Stok Produk: Hai ❤️ CH nak check, stok produk masih okay ke sekarang? Kalau perlukan bantuan untuk susun semula rutin penggunaan, boleh bagitahu CH tau 🥰
-10. Follow-Up Terakhir: Hai 🥰 CH just nak check sekali lagi. Kalau perlukan support untuk journey sihat, boleh mesej CH bila-bila masa tau. Kalau belum ready pun tak apa. Take care ❤️
+Quick question so I know how to help. What's the biggest thing holding you back right now?
 
-Skrip 10 ialah mesej terakhir. Selepas itu, berhenti.
+1. Controlling what I eat
+2. Weight is stuck
+3. Cravings
+4. Staying consistent with a busy schedule
 
-## Cara run (Claude in Chrome + WhatsApp Web)
+Just reply with the number.
 
-### Sebelum mula (sekali setiap sesi)
-1. Muatkan tool Claude in Chrome sekali gus (ToolSearch: `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text`). Panggil `tabs_context_mcp` dulu. Jika tool tiada, beritahu pengguna untuk pasang extension Claude in Chrome dan berhenti.
-2. Tanya nama pengguna (untuk ganti "CH") jika belum tahu.
-3. Tanya **nama label WhatsApp Business** yang mengandungi senarai pelanggan lama. Label berbeza untuk setiap ahli team. Ingat untuk sepanjang sesi, jangan tanya lagi.
-4. Buka `https://web.whatsapp.com` dalam tab baru. Jika nampak QR code / belum login, berhenti dan minta pengguna login dulu.
+After Message 4, tell the user to continue personally (suggest products, group coaching or a call based on the answer).
 
-### Untuk setiap chat dalam label
-1. Buka label tersebut (Chats → filter/menu Labels → pilih label) dan senaraikan chat di dalamnya.
-2. Buka satu chat. Baca sejarah terkini (mesej terakhir, siapa hantar, tarikh).
-3. Tentukan peringkat:
-   - Belum ada mesej follow-up dari kita → **Mesej 1** (atau satu skrip yang paling sesuai dari 10 skrip)
-   - Pelanggan dah reply Mesej 1 → **Mesej 2**
-   - Mesej terakhir kita 2–3 hari atau lebih, tiada reply, dan belum pernah hantar follow-up → **Mesej 3** (sekali sahaja)
-   - Pelanggan reply ✅ → **Mesej 4**, selepas itu beritahu pengguna untuk sambung secara personal
-   - Mesej terakhir kita kurang 2 hari dan belum reply → **skip, tunggu**
-   - Dah dapat follow-up tapi masih senyap → **skip, berhenti**
-   - Pelanggan minta berhenti / tak mahu terima mesej → **skip terus**
-   - Perbualan sedang berjalan secara personal → **skip**, jangan ganggu
-4. Tunjuk kepada pengguna: nama kontak, ringkasan chat, peringkat, dan draf penuh (dengan "CH" diganti nama pengguna). **Tunggu OK.** Jika pengguna edit, guna versi mereka.
-5. Selepas OK: taip draf dalam kotak mesej (kekalkan baris baru guna Shift+Enter) dan hantar. Semak mesej keluar dengan betul.
-6. Teruskan ke chat seterusnya.
+## 10 reactivation scripts — pick ONE by situation
+1. **Friendly Reconnect:** Hi [First name], Coach Ben here. It's been a while. How have things been on your end, and how's your fat loss journey going?
+2. **Challenge Check:** Hi [First name], quick check-in. Is anything making it hard to stay on track with your eating or weight right now? Tell me and I'll see how I can help.
+3. **Consistency Check:** Hi [First name], how's your routine these days? Still going, or has work taken over? No pressure, just checking in.
+4. **Group Coaching Invite:** Got it, [First name]. We've got a group coaching running that helps busy people stay consistent. Want me to send you the details?
+5. **Reply YES Follow-Up:** Hi [First name], if you'd like my help getting back on track, just reply YES and I'll follow up with you personally.
+6. **Progress Check:** Hi [First name], I'm curious. Since we last worked together, have you noticed any changes in your weight, measurements or energy? I'd love to hear.
+7. **Quiet Past Client:** Hi [First name], it's been a while since we caught up. Hope you've been well. If you ever want support to restart a healthy routine, I'm still here.
+8. **Restart Invite:** Hi [First name], if you're thinking of getting back into a healthy routine, I can help you rebuild it around your schedule. Want me to share how we can do that, through group coaching or a quick call?
+9. **Product Restock Check:** Hi [First name], quick check. How are you doing on your products? If you're running low or want help setting up your routine with them again, just let me know.
+10. **Final Follow-Up:** Hi [First name], just checking in one last time. Whenever you're ready to get back on track, message me anytime. If now isn't the right time, that's completely fine. Take care.
 
-### Kadar
-- Kumpulan kecil: maksimum 5 kontak satu pusingan, kemudian tanya pengguna nak sambung atau tidak.
-- Rentak natural, ada jeda antara chat. Jangan blast. Satu mesej satu masa setiap kontak.
+Script 10 is the final message. After that, stop.
 
-### Penutup
-Beri ringkasan: siapa dapat mesej apa, siapa di-skip dan sebab, dan siapa perlu disambung secara personal oleh pengguna.
+## How to run (Claude in Chrome + WhatsApp Web)
 
+### Before starting (once per session)
+1. Load the Claude in Chrome tools in one go (ToolSearch: `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text`). Call `tabs_context_mcp` first. If the tools aren't available, tell the user to install the Claude in Chrome extension and stop.
+2. Ask for the **WhatsApp Business label name** that holds the past clients. Remember it for the whole session; don't ask again.
+3. Open `https://web.whatsapp.com` in a new tab. If there's a QR code / not logged in, stop and ask the user to log in first.
+
+### For each chat in the label
+1. Open the label (Chats → filter/Labels menu → choose the label) and list the chats in it.
+2. Open one chat. Read the recent history (last message, who sent it, date, what products they bought if visible).
+3. Decide the stage:
+   - No follow-up from us yet → **Message 1** (or the single best-fitting script from the 10)
+   - Client replied to Message 1 → **Message 2** (2A, 2B or 2C depending on their reply)
+   - Our last message is 2–3+ days old, no reply, and no nudge sent yet → **Message 3** (once only)
+   - Client replied YES → **Message 4**, then tell the user to continue personally
+   - Our last message is under 2 days old with no reply → **skip, wait**
+   - Already nudged and still silent → **skip, stop**
+   - Client asked to stop / doesn't want messages → **skip completely**
+   - An active personal conversation is going on → **skip**, don't interrupt
+4. Show the user: contact name, first name to be used, chat summary, stage, and the full draft (with the real first name filled in). **Wait for OK.** If the user edits it, use their version.
+5. After OK: type the draft in the message box (keep line breaks with Shift+Enter) and send. Check the message went out correctly.
+6. Move to the next chat.
+
+### Pace
+- Small batches: max 5 contacts per round, then ask the user whether to continue.
+- Natural rhythm, with pauses between chats. Never blast. One message at a time per contact.
+
+### Wrap-up
+Give a summary: who got which message, who was skipped and why, and who the user should follow up personally (and whether they look like a restock, group coaching or call lead).
