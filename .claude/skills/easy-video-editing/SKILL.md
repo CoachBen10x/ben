@@ -11,7 +11,7 @@ Talk to the person in simple words. Don't show commands unless they ask.
 
 ```bash
 S=$(find /home /root -path "*/.claude/skills/easy-video-editing/scripts" -type d 2>/dev/null | head -1)
-mkdir -p ~/easy-edit && cp -n "$S"/*.py ~/easy-edit/ 2>/dev/null
+mkdir -p ~/easy-edit && cp -n "$S"/*.py "$S"/*.js ~/easy-edit/ 2>/dev/null
 python3 -c "import faster_whisper, cv2" 2>/dev/null || {
   apt-get update -q >/dev/null || true
   command -v ffmpeg >/dev/null || apt-get install -y -q ffmpeg
@@ -90,6 +90,14 @@ ffmpeg -i in.mp4 -filter_complex "[0]scale=1080:1920:force_original_aspect_ratio
 ffmpeg -i in.mp4 -i music.mp3 -filter_complex "[1:a]volume=0.15,afade=t=out:st=DUR-2:d=2[m];[0:a][m]amix=inputs=2:duration=first:normalize=0[a]" -map 0:v -map "[a]" -c:v copy -c:a aac out.mp4
 ```
 Replace DUR with the video length from ffprobe. Only music the person owns or that is royalty-free. Never put song lyrics on screen.
+
+**Sound effects** (pop on captions, ding on key words, whoosh-style laser, etc.; jsfx, MIT, runs in node)
+```bash
+node ~/easy-edit/sfx.js Select pop.wav --seed 3 --vol 0.35     # presets: Coin, Laser, Explosion, Powerup, Hit, Jump, Select, Lucky
+node ~/easy-edit/sfx.js Coin ding.wav --seed 7 --vol 0.4        # change --seed for a different variation
+ffmpeg -i in.mp4 -i pop.wav -i ding.wav -filter_complex "[1]adelay=0:all=1[a1];[2]adelay=1680:all=1[a2];[0:a][a1][a2]amix=inputs=3:duration=first:normalize=0[a]" -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k out.mp4
+```
+`adelay` = when the sound plays, in ms (use caption start times). To reuse a sound, `asplit` it first. Keep effects quieter than the voice.
 
 **Speed up 1.2x**
 ```bash
