@@ -53,10 +53,16 @@ ffmpeg -i in.mp4 -vf "ass=caps.ass" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a c
 ffmpeg -i in.mp4 -vf "subtitles=in.srt:force_style='FontName=Montserrat,FontSize=14,Bold=1,Outline=2,MarginV=60'" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a copy out.mp4
 ```
 
-**Face tracking to vertical** (~1 s of work per 1 s of 1080p video; follows the biggest face; vertical input stays as is)
+**Face tracking to vertical** (follows the speaker even with sunglasses / side-on; ignores one-off false hits)
 ```bash
 python3 ~/easy-edit/facetrack.py in.mp4 out.mp4      # calmer: --smooth 0.04, faster: --every 5
+python3 ~/easy-edit/facetrack.py in.mp4 out.mp4 --zoom 1.8 --facey 0.3 --every 2   # full-body/stage shot -> upper body
 ```
+`--zoom` punches in (works on vertical videos too); `--facey` = where the face sits from the top (0.3 shows more body).
+4K 60fps: ~10 s of work per 1 s of video.
+
+**Fun captions**: for short hooks, write the .ass by hand from `in_words.json`: 1-3 words per line,
+key words bigger + yellow (`Montserrat Black`, `\frz-4`, scale-down "slam"), the rest white pop-in.
 
 **Cut pauses**
 ```bash
