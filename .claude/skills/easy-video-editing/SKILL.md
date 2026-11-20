@@ -91,6 +91,23 @@ ffmpeg -i in.mp4 -i music.mp3 -filter_complex "[1:a]volume=0.15,afade=t=out:st=D
 ```
 Replace DUR with the video length from ffprobe. Only music the person owns or that is royalty-free. Never put song lyrics on screen.
 
+**Animated titles / text graphics (HyperFrames: HTML -> MP4)**
+For hook titles, lists, number reveals, intros/outros. `hyperframes --version` (installed by the ben-video setup).
+```bash
+hyperframes init title --example blank --resolution portrait --non-interactive --skip-skills
+cd title && npm install -q gsap@3.15.0 && cp node_modules/gsap/dist/gsap.min.js .
+# in index.html: replace the cdn.jsdelivr.net gsap <script> with <script src="gsap.min.js"></script>
+#   (that CDN is blocked here), set data-duration, write the text + a gsap timeline (tl.from(...)),
+#   font "Montserrat" weight 900, WDT yellow #FFD200 for key words.
+hyperframes render -o title.mp4 --fps 30          # ~40 s for a 3 s title
+```
+Overlay on a reel (title in the first 3 s, top area): render with a transparent background as `--format mov`,
+then `ffmpeg -i in.mp4 -i title.mov -filter_complex "[0][1]overlay=0:0:enable='lt(t,3)'" -c:a copy out.mp4`,
+or just join the title clip in front with the Join recipe. Check frames with a contact sheet before sending.
+
+**Reference reels (yt-dlp)**: `yt-dlp -o ref.mp4 URL`. Instagram/TikTok are not on this environment's allowed
+list, so ask the person to save the reel on their phone and upload it. Only for studying, never repost others' videos.
+
 **Speed up 1.2x**
 ```bash
 ffmpeg -i in.mp4 -filter_complex "[0:v]setpts=PTS/1.2[v];[0:a]atempo=1.2[a]" -map "[v]" -map "[a]" -c:v libx264 -crf 18 -pix_fmt yuv420p out.mp4
